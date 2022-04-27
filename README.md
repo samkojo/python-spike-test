@@ -2,11 +2,11 @@
  Exemplo simples de modelo proposto em spike python
 
 Exemplo de Spike:
-- Leitura de arquivo JSON
+- Leitura de arquivo JSON contendo linhas de itens de pedidos e retornar total
 
 # README.md
 
-Spike demonstrando a leitura de arquivos JSON
+Spike demonstrando a leitura de arquivos JSON contendo linhas de itens de pedidos e retornar total
 ## **Requisitos**
 
 - `python` - [Link](https://www.python.org/downloads/release/python-3104/)
@@ -30,11 +30,11 @@ cp example.env .env
 ## 2.Execução
 - Ao executar será lido o arquivo `test.json` e impresso na tela
 ```bash
-python test_read_json.py
+python read_json_file_calc_total.py
 ```
 - Retorno esperado:
 ```bash
-{'id': 1, 'valor': 100}
+600
 ```
 
 ## 3.Execução de teste
@@ -47,8 +47,16 @@ pytest
 Caso queira verificar a leitura de um outro arquivo, pode fazer a alteração do caminho do arquivo via variavel `FILEPATH` no arquivo `.env`
 Obs.: caso mude o arquivo o teste automatizado somente retornará positivo caso o conteúdo seja:
 ```json
-{
+[{
     "id": 1,
-    "valor": 100
-}
+    "total": 100
+},
+{
+    "id": 2,
+    "total": 200
+},
+{
+    "id": 2,
+    "total": 300
+}]
 ```

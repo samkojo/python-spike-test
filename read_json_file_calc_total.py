@@ -10,15 +10,14 @@ def readJsonFile(file):
      with open(file) as json_file:
         return json.load(json_file)
 
-def test_readJsonFile():
-    expectedJson = {
-                    "id": 1,
-                    "valor": 100
-                }
-    assert readJsonFile(FILEPATH) == expectedJson
+def calcTotal(itens):
+    sum = 0
+    for item in itens:
+        sum += item['total']
+    return sum
 
 def main():
-    print(readJsonFile(FILEPATH))
+    print(calcTotal(readJsonFile(FILEPATH)))
 
 if __name__ == '__main__':
     main()
